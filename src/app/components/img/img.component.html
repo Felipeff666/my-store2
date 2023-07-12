@@ -1,0 +1,14 @@
+<div style="background-color: rgb(255, 179, 80); padding: 1rem;">
+
+  <h2>Componente hijo</h2>
+
+<!--   El evento (error) nos ayuda a identificar si es que existe un error en nuestro elemento en este caso
+  identifica si si la imagen cargo correctamete
+  Por otra parte el evento (Load) nos ayuda a identificar cuando nuestro elemento fue cargado correctamente -->
+
+  <img width="200" [src]="img" alt="" *ngIf="img; else elseimg" (error)="imgError()" (load)="imgLoaded()" >
+  <!-- ngtemplate nos ayuda a mostrar un bloque en caso de else de *ngIf -->
+  <ng-template #elseimg>
+    <img width="200" [src]="imageDefault" alt="">
+  </ng-template>
+</div>
